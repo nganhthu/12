@@ -36,6 +36,7 @@ nav a {
     font-size: 16px;
 }
 
+
 .search-bar {
     margin-top: 10px;
 }
@@ -71,7 +72,7 @@ header > .tren > .logo {
 header > .tren > .sign {
     width: 50%;
     height: 100%;
-    text-align: center;
+    text-align: right;
 }
 
 form button {
