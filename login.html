@@ -76,16 +76,16 @@
 <body>
     <div class="container">
         <div class="login-form">
-            <h2>Đăng nhập</h2>
             <div class="form-content">
                 <img src="image/login.png" alt="Ảnh đại diện">
                 <form onsubmit="return validateLoginForm()">
+                    <h2>Đăng nhập</h2>
                     <label for="username">Tên đăng nhập:</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập...">
 
                     <label for="password">Mật khẩu:</label>
-                    <input type="password" id="password" name="password" required>
-
+                    <input type="password" id="password" name="password" placeholder="Nhập mật khẩu..." required>
+                    <input type="checkbox"> Lưu thông tin đăng nhập
                     <button type="submit">Đăng nhập</button>
                 </form>
             </div>
