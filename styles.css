@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    margin: 20px;
+    margin: 0;
     padding: 0;
 }
 
@@ -98,10 +98,24 @@ header > .menu {
     color: white;
 }
 
+.menu nav li:hover {
+    color: white; /* Màu sắc khi hover */
+    background:#B60D0D;
+}
+
+.menu nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển động màu khi hover */
+}
+
 /**main**/
 main{
     width: 100%;
     height: 1400px;
+    margin: 20px;
 }
 
 /**phần lọc và tìm kiếm**/
