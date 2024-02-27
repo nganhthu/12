@@ -5,6 +5,7 @@
         <title>Hệ thống thi trắc nghiệm PTIT - 12</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <header>
@@ -36,8 +37,8 @@
                     <ul>
                         <li><a href="#">Trang chủ</a></li>
                         <li><a href="#">Luyện Tập</a></li>
-                        <li><a href="#">Thi Giữa Kỳ</a></li>
-                        <li><a href="#">Thi Cuối Kỳ</a></li>
+                        <li><a href="#">Danh sách kỳ thi</a></li>
+                        <li><a href="#">Liên hệ & Hỗ trợ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -45,14 +46,47 @@
 
         <main>
             <section class="content-section">
+                <div class="content">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                        <!-- Lọc theo trạng thái -->
+        <select id="statusFilter">
+            <option value="all">Trạng thái</option>
+            <option value="accessible">Có thể truy cập</option>
+            <option value="scheduled">Đã lên lịch</option>
+            <!-- Thêm các trạng thái khác nếu cần -->
+        </select>
+
+        <!-- Lọc theo môn học -->
+        <select id="subjectFilter">
+            <option value="all">Môn học</option>
+            <option value="math">Toán học</option>
+            <option value="english">Tiếng Anh</option>
+            <!-- Thêm các môn học khác nếu cần -->
+        </select>
+
+        <!-- Lọc theo lớp học -->
+        <select id="classFilter">
+            <option value="all">Lớp học</option>
+            <option value="classA">Lớp A</option>
+            <option value="classB">Lớp B</option>
+            <!-- Thêm các lớp học khác nếu cần -->
+        </select>
+
+        <!-- Lọc theo kỳ thi -->
+        <select id="examFilter">
+            <option value="all">Kỳ thi</option>
+            <option value="practice">Luyện tập</option>
+            <option value="midterm">Giữa kỳ</option>
+            <option value="final">Cuối kỳ</option>
+            <!-- Thêm các kỳ thi khác nếu cần -->
+        </select>
+                        <button type="button" onclick="searchAndFilter()">Tìm kiếm</button>
+                    </div>
+                </div>
                 <div class="banner">
                     <img src="image/banner gthieu.png" alt="Ảnh mô tả" style="width: 90%; padding: 100px;">
                 </div>
-                <div class="content">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Tìm kiếm...">
-                        <button type="button">Tìm kiếm</button>
-                    </div>
                     <h2>Tiêu đề Nội dung</h2>
                     <p>
                         Nội dung mô tả của trang web sẽ ở đây. Bạn có thể thêm các đoạn văn bản,
