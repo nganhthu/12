@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style type="text/css">
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-form {
+            width: 1000px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .form-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-content img {
+            width: 500px; 
+            margin-right: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #DF1C12;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hiệu ứng hover cho nút đăng nhập và đăng ký */
+        button:hover {
+            background-color: #B60D0D;
+        }
+    </style>
+    <script src="login.js"></script> <!-- Thêm file JavaScript -->
+</head>
+<body>
+    <div class="container">
+        <div class="login-form">
+            <h2>Đăng nhập</h2>
+            <div class="form-content">
+                <img src="image/login.png" alt="Ảnh đại diện">
+                <form onsubmit="return validateLoginForm()">
+                    <label for="username">Tên đăng nhập:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Đăng nhập</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
