@@ -173,7 +173,8 @@ main > .content{
 .content-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Căn cách giữa các bài thi */
+    max-width: 1200px;
+    justify-content: space-between; 
 }
 
 .exam-container {
