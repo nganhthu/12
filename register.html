@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style type="text/css">
+        body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #DF1C12;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hiệu ứng hover cho nút đăng nhập và đăng ký */
+        button:hover {
+            background-color: #B60D0D;
+        }
+    </style>
+    <script src="register.js"></script> <!-- Thêm file JavaScript -->
+</head>
+<body>
+    <div class="container">
+        <h2>Đăng ký</h2>
+        <form onsubmit="return validateRegisterForm()">
+            <label for="newUsername">Tên người dùng:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="newPassword">Mật khẩu:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <label for="confirmPassword">Xác nhận mật khẩu:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+</body>
+</html>
