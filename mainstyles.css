@@ -64,17 +64,24 @@ header > .tren {
 }
 
 header > .tren > .logo {
-    width: 50%;
+    width: 80%;
     height: 100%;
     text-align: center;
 }
 
 
-header > .tren > .sign {
-    width: 50%;
+header > .tren > .login {
+    width: 10%;
     height: 100%;
     text-align: right;
 }
+
+header > .tren > .register {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+
 
 form button {
     background-color: #DF1C12;
