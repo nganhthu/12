@@ -31,3 +31,4 @@ function displayExamList(exams) {
 }
 
 searchAndFilter();
+
