@@ -6,6 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
+        
+        <script>
+            // Một mảng giả định chứa thông tin bài thi
+            var examData = [
+                { title: 'Bài thi 1', subject: 'Triết học', class: 'Lớp A', status: 'Có thể truy cập', type: 'Luyện tập' },
+                { title: 'Bài thi 2', subject: 'Lập trình c++', class: 'Lớp B', status: 'Đã lên lịch', type: 'Cuối kỳ' },
+                { title: 'Bài thi 3', subject: 'Nhập môn CNPM', class: 'Lớp B', status: 'Đã lên lịch', type: 'Giữa kỳ' },
+                { title: 'Bài thi 4', subject: 'Nhập môn TTNT', class: 'Lớp A', status: 'Đã lên lịch', type: 'Cuối kỳ' },
+                // Thêm thông tin bài thi khác nếu cần
+            ];
+    
+            // Hàm để hiển thị danh sách bài thi trên trang chính
+            function displayExams() {
+                var contentSection = document.querySelector('.content-section');
+    
+                examData.forEach(function(exam) {
+                    var examContainer = document.createElement('div');
+                    examContainer.classList.add('exam-container');
+    
+                    var examItem = document.createElement('div');
+                    examItem.classList.add('exam-item');
+    
+                    var examTitle = document.createElement('h3');
+                    examTitle.textContent = exam.title;
+    
+                    var examDetails = document.createElement('p');
+                    examDetails.innerHTML = `<strong>Môn học:</strong> ${exam.subject} <br>
+                                             <strong>Lớp học:</strong> ${exam.class} <br>
+                                             <strong>Trạng thái:</strong> ${exam.status} <br>
+                                             <strong>Kỳ thi:</strong> ${exam.type}`;
+    
+                    examItem.appendChild(examTitle);
+                    examItem.appendChild(examDetails);
+                    examContainer.appendChild(examItem);
+    
+                    contentSection.appendChild(examContainer);
+                });
+            }
+    
+            // Gọi hàm để hiển thị danh sách bài thi khi trang được tải
+            window.onload = displayExams;
+        </script>
     </head>
     <body>
         <header>
@@ -81,14 +123,9 @@
                     </div>
                 </div>
                 <div class="banner">
-                    <img src="image/banner gthieu.png" alt="Ảnh mô tả" style="width: 90%; padding: 100px;">
+                    <img src="image/banner gthieu.png" alt="Ảnh mô tả" style="width: 1800px;">
                 </div>
-                    <h2>Tiêu đề Nội dung</h2>
-                    <p>
-                        Nội dung mô tả của trang web sẽ ở đây. Bạn có thể thêm các đoạn văn bản,
-                        hình ảnh, bảng, hoặc bất kỳ thành phần HTML nào khác theo nhu cầu của bạn.
-                    </p>
-                </div>
+
             </section>
         </main>
 
