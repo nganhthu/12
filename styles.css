@@ -104,6 +104,40 @@ main{
     height: 1400px;
 }
 
+/**phần lọc và tìm kiếm**/
+/* Style cho ô tìm kiếm */
+#searchInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+/* Style cho các ô lựa chọn */
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Style cho nút tìm kiếm */
+button {
+    padding: 10px 15px;
+    background-color: #DF1C12;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect cho nút tìm kiếm */
+button:hover {
+    background-color: #B60D0D;
+}
+
+
 main > .banner{
     width: 100%;
     height: 20%;
