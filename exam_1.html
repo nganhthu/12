@@ -70,10 +70,25 @@ button:hover {
     <script>
         // Mảng giả định chứa câu hỏi và đáp án cho bài thi
         var questions = [
-            { id: 1, content: 'Câu hỏi 1: ...', options: ['A. Đáp án A', 'B. Đáp án B', 'C. Đáp án C', 'D. Đáp án D'], correctAnswer: 'A' },
-            { id: 2, content: 'Câu hỏi 2: ...', options: ['A. Đáp án A', 'B. Đáp án B', 'C. Đáp án C', 'D. Đáp án D'], correctAnswer: 'B' },
-            // Thêm câu hỏi khác nếu cần
+            { id: 1, content: 'Câu hỏi 1: Triết học có chức năng cơ bản nào?', options: ['A. Chức năng thế giới quan', 'B. Chức năng phương pháp luận chung nhất', 'C. Cả a và b', 'D. Không có câu trả lời đúng'], correctAnswer: 'A' },
+            { id: 2, content: 'Câu hỏi 2: Ý thức có trước, vật chất có sau, ý thức quyết định vật chất, đây là quan điểm nào?', options: ['A. Duy vật', 'B. Duy tâm', 'C. Duy tâm chủ quan', 'D. Nhị Nguyên'], correctAnswer: 'B' },
+            { id: 3, content: 'Câu hỏi 3: Triết học đạo lý chủ nghĩa là một học thuyết xoay quanh yếu tố nào?', options: ['A. Tư duy', 'B. Hành động', 'C. Đạo lý', 'D. Đối tượng nghiên cứu'], correctAnswer: 'C' },
+            { id: 4, content: 'Câu hỏi 4: Học thuyết chủ nghĩa duy vật lịch sử do ai đặt ra?', options: ['A. Karl Marx', 'B. Friedrich Engels', 'C. Vladimir Lenin', 'D. Jean-Jacques Rousseau'], correctAnswer: 'A' },
+            { id: 5, content: 'Câu hỏi 5: Triết học nhân quả nói về quan hệ gì giữa nguyên nhân và kết quả?', options: ['A. Quan hệ nguyên nhân - kết quả', 'B. Quan hệ nguyên nhân - biện minh', 'C. Quan hệ tương quan', 'D. Quan hệ nguyên nhân - hiện tượng'], correctAnswer: 'A' },
+            { id: 6, content: 'Câu hỏi 6: "Tôi nghĩ, vì vậy tôi tồn tại" là câu nói của nhà triết học nào?', options: ['A. Socrates', 'B. Immanuel Kant', 'C. René Descartes', 'D. Confucius'], correctAnswer: 'C' },
+            { id: 7, content: 'Câu hỏi 7: Triết học Mác-Lênin nhấn mạnh vai trò quan trọng của tầng lớp nào trong xã hội?', options: ['A. Tầng lớp công nhân', 'B. Tầng lớp tư sản', 'C. Tầng lớp trí thức', 'D. Tầng lớp nông dân'], correctAnswer: 'A' },
+            { id: 8, content: 'Câu hỏi 8: Triết học existentialism nhấn mạnh yếu tố nào trong con người?', options: ['A. Tình yêu', 'B. Tự do', 'C. Quyền lực', 'D. Tài năng'], correctAnswer: 'B' },
+            { id: 9, content: 'Câu hỏi 9: Triết học hòa bình nghiên cứu về điều gì trong mối quan hệ xã hội?', options: ['A. Chiến tranh', 'B. Công bằng', 'C. Tự do', 'D. Hạnh phúc'], correctAnswer: 'A' },
+            { id: 10, content: 'Câu hỏi 10: Triết học Đông phương thường tập trung vào khám phá điều gì?', options: ['A. Hạnh phúc', 'B. Sự giáo dục', 'C. Sự linh thiêng', 'D. Sự công bằng'], correctAnswer: 'C' },
         ];
+
+        //lưu trạng thái đáp án của sv
+        var userAnswers = new Array(questions.length).fill(null);
+
+        //chọn đáp án
+        function selectAnswer(questionIndex, optionIndex) {
+            userAnswers[questionIndex] = optionIndex;
+        }
 
         // Thời gian thi (đơn vị: giây)
         var examTime = 600; // Ví dụ: 10 phút
@@ -85,7 +100,7 @@ button:hover {
         function displayQuestions() {
             var questionSection = document.getElementById('questionSection');
 
-            questions.forEach(function(question) {
+            questions.forEach(function(question, questionIndex) {
                 var questionContainer = document.createElement('div');
                 questionContainer.classList.add('question-container');
 
@@ -93,9 +108,18 @@ button:hover {
                 questionContent.textContent = question.content;
 
                 var optionsList = document.createElement('ul');
-                question.options.forEach(function(option) {
+                question.options.forEach(function(option, optionIndex) {
                     var listItem = document.createElement('li');
-                    listItem.textContent = option;
+                    var radioButton = document.createElement('input');
+                    radioButton.type = 'radio';
+                    radioButton.name = 'question' + question.id;
+                    radioButton.value = optionIndex;
+                    radioButton.addEventListener('change', function() {
+                        selectAnswer(questionIndex, optionIndex);
+                    });
+
+                    listItem.appendChild(radioButton);
+                    listItem.appendChild(document.createTextNode(option));
                     optionsList.appendChild(listItem);
                 });
 
@@ -104,6 +128,7 @@ button:hover {
                 questionSection.appendChild(questionContainer);
             });
         }
+
 
         // Hàm để đếm thời gian
         function startTimer() {
@@ -132,11 +157,31 @@ button:hover {
             return time < 10 ? '0' + time : time;
         }
 
-        // Hàm khi bài thi được nộp
         function submitExam() {
             clearInterval(timer);
-            alert('Bài thi đã được nộp. Cảm ơn bạn đã tham gia!');
+            var score = calculateScore();
+
+            alert('Bài thi đã được nộp. Điểm của bạn là: ' + score + ' điểm. Cảm ơn bạn đã tham gia!');
             // Có thể thêm logic để xử lý kết quả và điều hướng người dùng đến trang kết quả ở đây
+        }
+
+        // Hàm để tính điểm
+        function calculateScore() {
+            var score = 0;
+
+            questions.forEach(function(question, index) {
+                if (userAnswers[index] === null) {
+                    // Người dùng chưa chọn đáp án
+                    return;
+                }
+
+                var selectedOption = question.options[userAnswers[index]];
+                if (selectedOption === question.correctAnswer) {
+                    score++;
+                }
+            });
+
+            return score;
         }
 
         // Gọi hàm để hiển thị câu hỏi và bắt đầu đếm thời gian khi trang được tải
