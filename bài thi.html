@@ -38,8 +38,13 @@
                 var startButton = document.createElement('button');
                 startButton.textContent = 'Bắt đầu làm bài';
                 startButton.addEventListener('click', function() {
-                    window.location.href = `exam_${exam.id}.html`; // Đặt tên trang bài thi theo id
+                    var examId = exam.id;
+                    var examUrl = `exam_${examId}.html`; // Đặt tên trang bài thi theo id
+
+                    // Mở trang trong tab mới
+                    window.open(examUrl, '_blank');
                 });
+
 
                 examItem.appendChild(examTitle);
                 examItem.appendChild(examDetails);
