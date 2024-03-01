@@ -174,12 +174,12 @@ main > .content{
 .content-section {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1800px;
     justify-content: space-between; 
 }
 
 .exam-container {
-    width: calc(30% - 20px); 
+    width: calc(25% - 20px); 
     margin-bottom: 20px;
     box-sizing: border-box; 
     border: 1px solid #ddd;
