@@ -34,8 +34,6 @@ searchAndFilter();
 
 
 
-
-
 //Xử lý logic đăng nhập user, admin
 function validateLoginForm() {
     var username = document.getElementById("username").value;
