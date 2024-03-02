@@ -160,9 +160,13 @@
         function submitExam() {
             clearInterval(timer);
             var score = calculateScore();
+            var totalQuestions = questions.length;
 
-            alert('Bài thi đã được nộp. Điểm của bạn là: ' + score + ' điểm. Cảm ơn bạn đã tham gia!');
-            // Có thể thêm logic để xử lý kết quả và điều hướng người dùng đến trang kết quả ở đây
+            sessionStorage.setItem('score', score);
+            sessionStorage.setItem('totalQuestions', totalQuestions);
+            sessionStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+
+            window.location.href = 'result.html';
         }
 
         // Hàm để tính điểm
@@ -175,8 +179,8 @@
                     return;
                 }
 
-                var selectedOption = question.options[userAnswers[index]];
-                if (selectedOption === question.correctAnswer) {
+                var selectedOptionIndex = userAnswers[index]; // Get the index of the selected option
+                if (selectedOptionIndex === question.options.indexOf(question.correctAnswer)) {
                     score++;
                 }
             });
@@ -184,10 +188,16 @@
             return score;
         }
 
+        function saveQuestionsToSessionStorage() {
+            sessionStorage.setItem('questions', JSON.stringify(questions));
+        }
+
+
         // Gọi hàm để hiển thị câu hỏi và bắt đầu đếm thời gian khi trang được tải
         window.onload = function() {
             displayQuestions();
             startTimer();
+            saveQuestionsToSessionStorage();
         };
 
     </script>
@@ -200,7 +210,7 @@
 
     <main>
         <section class="question-section" id="questionSection">
-            <!-- Nội dung câu hỏi sẽ được JavaScript điều khiển -->
+            <!-- ... (Nội dung câu hỏi sẽ được JavaScript điều khiển) -->
         </section>
 
         <button id="submitButton" onclick="submitExam()">Nộp bài</button>
