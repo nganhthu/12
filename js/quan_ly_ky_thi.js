@@ -33,7 +33,7 @@ var exams = [
   // Hàm hiển thị chi tiết bài thi
   function showDetail(examName) {
     // Chuyển hướng đến trang chi tiết bài thi
-    window.location.href = "detail.html?name=" + encodeURIComponent(examName);
+    window.location.href = "chi_tiet_bai_thi.html?name=" + encodeURIComponent(examName);
   }
 
   // Hàm chỉnh sửa bài thi
@@ -86,3 +86,7 @@ var exams = [
       renderExamList();
     }
   }
+
+function goToAddExam() {
+    window.location.href = "them_bai_thi.html";
+}
