@@ -186,7 +186,12 @@ h2 {
 
 .announcement {
     width: 600px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Kiểu cho phần nội dung chính */
