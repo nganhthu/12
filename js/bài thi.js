@@ -26,21 +26,10 @@ function displayExamList() {
                                 <strong>Trạng thái:</strong> ${exam.status} <br>
                                 <strong>Kỳ thi:</strong> ${exam.type}`;
 
-        // Thêm nút bắt đầu làm bài và xử lý sự kiện
-        var startButton = document.createElement('button');
-        startButton.textContent = 'Bắt đầu làm bài';
-        startButton.addEventListener('click', function() {
-            var examId = exam.id;
-            var examUrl = `exam_${examId}.html`; // Đặt tên trang bài thi theo id
-
-            // Mở trang trong tab mới
-            window.open(examUrl, '_blank');
-        });
 
 
         examItem.appendChild(examTitle);
         examItem.appendChild(examDetails);
-        examItem.appendChild(startButton);
         examContainer.appendChild(examItem);
 
         examListSection.appendChild(examContainer);
