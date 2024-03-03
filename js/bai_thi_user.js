@@ -4,6 +4,10 @@ var examData = [
     { id: 2, title: 'Bài thi 2', subject: 'Lập trình c++', class: 'Lớp B', status: 'Đã lên lịch', type: 'Cuối kỳ' },
     { id: 3, title: 'Bài thi 3', subject: 'Nhập môn CNPM', class: 'Lớp B', status: 'Đã lên lịch', type: 'Giữa kỳ' },
     { id: 4, title: 'Bài thi 4', subject: 'Nhập môn TTNT', class: 'Lớp A', status: 'Đã lên lịch', type: 'Cuối kỳ' },
+    { id: 5, title: 'Bài thi 5', subject: 'Hệ điều hành', class: 'Lớp A', status: 'Đã lên lịch', type: 'Cuối kỳ' },
+    { id: 6, title: 'Bài thi 6', subject: 'Kiến trúc máy tính', class: 'Lớp C', status: 'Có thể truy cập', type: 'Cuối kỳ' },
+    { id: 7, title: 'Bài thi 7', subject: 'Tư tưởng HCM', class: 'Lớp D', status: 'Đã lên lịch', type: 'Giữa kỳ' },
+    { id: 8, title: 'Bài thi 8', subject: 'Toán rời rạc 1', class: 'Lớp E', status: 'Có thể truy cập', type: 'Luyện tập' },
 ];
 
 // Hàm để hiển thị danh sách các bài thi
