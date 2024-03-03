@@ -160,8 +160,30 @@ h2 {
     text-decoration: underline; 
 }
 
+/* Kiểu cho banner và thông báo */
+#banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px; 
+}
 
+.banner-image {
+    flex: 2; 
+}
 
+.announcement-columns {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+}
 
-/* Kiểu cho phần nội dung chính */
+.announcement-column {
+    flex-basis: 48%;
+}
 
+.announcement {
+    width: 600px;
+    margin-bottom: 20px; 
+}
