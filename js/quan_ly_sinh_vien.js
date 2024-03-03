@@ -39,7 +39,7 @@ function searchStudent() {
 // Hiển thị trang chi tiết sinh viên
 function showStudentDetail(studentId) {
     // Điều hướng đến trang chi tiết sinh viên
-    window.location.href = "chi_tiet.html?id=" + studentId;
+    window.location.href = "chi_tiet_sinh_vien.html?id=" + studentId;
 }
 
 // Hiển thị trang chỉnh sửa sinh viên
@@ -62,3 +62,11 @@ function deleteStudent(studentId) {
 
 // Khởi chạy
 displayStudents(students);
+
+function goToAddStudent() {
+    window.location.href = "them_sinh_vien.html";
+}
+
+function goToViewResult() {
+    window.location.href = "xem_ket_qua_sinh_vien.html";
+}
