@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng điều khiển Admin</title>
+    <title>Trang quảng lý của admin</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -19,9 +19,17 @@
         main {
             flex: 1;
             display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
         section {
@@ -50,10 +58,11 @@
     <header id="headerSection">
 
     </header>
-
     <main>
+        <h1>Trang quản lý của admin</h1>
+
         <section id="quản-lý-kỳ-thi">
-            <a href="">
+            <a href="quan_ly_ky_thi.html">
                 Quản lý Kỳ thi
             </a>
         </section>
