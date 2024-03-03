@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hệ thống thi trắc nghiệm PTIT - 12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="js/Load_h_f_user.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header id="headeruserSection">
+
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="content">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+                        <!-- Lọc theo trạng thái -->
+                        <select id="statusFilter">
+                            <option value="all">Trạng thái</option>
+                            <option value="accessible">Có thể truy cập</option>
+                            <option value="scheduled">Đã lên lịch</option>
+                        </select>
+
+                        <!-- Lọc theo môn học -->
+                        <select id="subjectFilter">
+                            <option value="all">Môn học</option>
+                            <option value="math">Toán học</option>
+                            <option value="english">Tiếng Anh</option>
+                        </select>
+
+                        <!-- Lọc theo lớp học -->
+                        <select id="classFilter">
+                            <option value="all">Lớp học</option>
+                            <option value="classA">Lớp A</option>
+                            <option value="classB">Lớp B</option>
+                        </select>
+
+                        <!-- Lọc theo kỳ thi -->
+                        <select id="examFilter">
+                            <option value="all">Kỳ thi</option>
+                            <option value="practice">Luyện tập</option>
+                            <option value="midterm">Giữa kỳ</option>
+                            <option value="final">Cuối kỳ</option>
+                        </select>
+                        <button type="button" onclick="searchAndFilter()">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="announcement-section">
+                    <div class="banner-image">
+                        <img src="image/banner gthieu.png" alt="Ảnh mô tả">
+                    </div>
+                    <div class="announcement-columns">
+                        <div class="announcement-column">
+                            <div class="announcement">
+                                <h3>Thông báo 1</h3>
+                                <p>Trường tổ chức thi cuối kỳ từ ngày 1/5-20/5</p>
+                            </div>
+                            <div class="announcement">
+                                <h3>Thông báo 2</h3>
+                                <p>Thông báo khác...</p>
+                            </div>
+                        </div>
+                        <div class="announcement-column">
+                            <div class="announcement">
+                                <h3>Thông báo 3</h3>
+                                <p>Thông báo khác...</p>
+                            </div>
+                        </div>
+                        <div class="announcement-column">
+                            <div class="announcement">
+                                <h3>Thông báo 4</h3>
+                                <p>Thông báo khác...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footerSection">
+    </footer>
+</body>
+</html>
