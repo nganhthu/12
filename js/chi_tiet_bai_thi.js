@@ -66,7 +66,7 @@ var examDetail = {
   // Hàm xử lý khi nhấn nút chỉnh sửa câu hỏi
   function editQuestion(index) {
     // Chuyển hướng đến trang chỉnh sửa câu hỏi
-    window.location.href = "editQuestion.html?exam=" + encodeURIComponent(examDetail.name) + "&index=" + index;
+    window.location.href = "edit_question.html?exam=" + encodeURIComponent(examDetail.name) + "&index=" + index;
   }
 
   // Hàm xử lý khi nhấn nút xoá câu hỏi
