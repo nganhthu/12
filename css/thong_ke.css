@@ -1,3 +1,13 @@
+main {
+    height: 550px; /* Đặt chiều cao cố định của phần main */
+    overflow-y: auto; /* Tạo thanh cuộn khi nội dung vượt quá chiều cao */
+    margin-bottom: 20px; /* Thêm margin-bottom để không chèn lên phần footer */
+}
+
+h1{
+    text-align: center;
+}
+
 #filter-btn{
     /* padding: 10px 20px;
     margin: 0 10px; */
@@ -62,7 +72,7 @@ select{
     padding: 30px;
 }
 .chart-container{
-    margin: 20px 140px;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
