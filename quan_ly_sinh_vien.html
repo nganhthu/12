@@ -22,7 +22,7 @@
             background-color: #45a049;
         }
         th, td {
-            border: 1px solid #ddd;
+            
             padding: 8px;
             text-align: left;
         }
@@ -78,16 +78,16 @@
             <button class="button" onclick="goToViewResult()">Xem kết quả</button>
             <br>
             <br>
-            <table >
+            <table id="sv">
                 <thead>
-                    <tr>
-                        <th>Họ và tên</th>
-                        <th>Mã sinh viên</th>
-                        <th>Lớp</th>
-                        <th>Thao tác</th>
+                    <tr id="sv_1">
+                        <th style="border: 1px solid #ddd;">Họ và tên</th>
+                        <th style="border: 1px solid #ddd;">Mã sinh viên</th>
+                        <th style="border: 1px solid #ddd;">Lớp</th>
+                        <th style="border: 1px solid #ddd;">Thao tác</th>
                     </tr>
                 </thead>
-                <tbody id="studentTableBody">
+                <tbody id="studentTableBody" style="border: 1px solid #ddd;">
                     <!-- Danh sách sinh viên sẽ được thêm vào đây -->
                 </tbody>
             </table>
