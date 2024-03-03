@@ -14,7 +14,7 @@ function displayStudents(studentList) {
     tableBody.innerHTML = "";
     studentList.forEach(function(student) {
         var row = "<tr>";
-        row += "<td>" + student.name + "</td>";
+        row += "<td >" + student.name + "</td>";
         row += "<td>" + student.id + "</td>";
         row += "<td>" + student.className + "</td>";
         row += "<td class='action-buttons'>";
