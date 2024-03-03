@@ -44,7 +44,7 @@ function validateLoginForm() {
 
     if (userRole === "user") {
         alert("Đăng nhập thành công!"); 
-        window.location.href = "trang chính.html"; // Chuyển hướng về trang chính (user)
+        window.location.href = "trang_chinh_user.html"; // Chuyển hướng về trang chính (user)
     } else if (userRole === "admin") {
         alert("Đăng nhập thành công!");
         window.location.href = "admin-dashboard.html"; // Chuyển hướng về trang admin
