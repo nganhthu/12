@@ -6,7 +6,6 @@
     <title>Chỉnh sửa bài thi</title>
     <link rel="stylesheet" href="style.css">
     <style>
-  
         form {
             max-width: 600px;
             margin: 0 auto;
@@ -18,6 +17,14 @@
         input[type="text"],
         select {
             width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="date"] {
+            width: calc(100% - 16px); /* Adjust for border width */
             padding: 8px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -45,58 +52,73 @@
   <header id="headerSection">
   </header>
   <main>
-        <h1>Chỉnh sửa thông tin bài thi</h1>
-        <form id="editExamForm">
-        <label for="examName">Tên bài thi:</label>
-        <input type="text" id="examName" name="examName">
-
-        <label for="examType">Kiểu bài thi:</label>
-        <select id="examType" name="examType">
-            <option value="midterm">Luyện tập</option>
-            <option value="midterm">Giữa kì</option>
-            <option value="final">Cuối kì</option>
-        </select>
-
-        <label for="examTime">Thời gian:</label>
-        <input type="text" id="examTime" name="examTime">
-
-        <label for="examSchedule">Kiểu thi:</label>
-        <select id="examSchedule" name="examSchedule">
-            <option value="free">Tự do</option>
-            <option value="scheduled">Đã lên lịch</option>
-        </select>
-
-        <h2>Thay đổi nội dung câu hỏi</h2>
-        <label for="questionNumber">Câu hỏi số:</label>
-        <input type="text" id="questionNumber" name="questionNumber">
-
-        <label for="questionContent">Nội dung câu hỏi:</label>
-        <textarea id="questionContent" name="questionContent"></textarea>
-
-        <label for="answerA">Câu trả lời A:</label>
-        <input type="text" id="answerA" name="answerA">
-        <label for="answerB">Câu trả lời B:</label>
-        <input type="text" id="answerB" name="answerB">
-        <label for="answerC">Câu trả lời C:</label>
-        <input type="text" id="answerC" name="answerC">
-        <label for="answerD">Câu trả lời D:</label>
-        <input type="text" id="answerD" name="answerD">
-
-        <label for="correctAnswer">Đáp án đúng:</label>
-        <select id="correctAnswer" name="correctAnswer">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-        </select>
-
-        <input type="submit" value="Lưu">
-        <br>
-        <br>
-        </form>
+    <h1>Chỉnh sửa thông tin bài thi</h1>
+    <form id="editExamForm">
+      <label for="examName">Tên bài thi:</label>
+      <input type="text" id="examName" name="examName">
+    
+      <label for="examType">Kiểu bài thi:</label>
+      <select id="examType" name="examType">
+        <option value="midterm">Luyện tập</option>
+        <option value="midterm">Giữa kì</option>
+        <option value="final">Cuối kì</option>
+      </select>
+    
+      <label for="examTime">Thời gian:</label>
+      <input type="text" id="examTime" name="examTime">
+    
+      <label for="examSchedule">Ngày thi:</label>
+      <select id="examSchedule" name="examSchedule">
+        <option value="free">Tự do</option>
+        <option value="scheduled">Thời gian cụ thể</option>
+      </select>
+    
+      <div id="scheduleDate" style="display: none;">
+        <label for="examDate">Ngày thi:</label>
+        <input type="date" id="examDate" name="examDate">
+      </div>
+    
+      <h2>Thay đổi nội dung câu hỏi</h2>
+      <label for="questionNumber">Câu hỏi số:</label>
+      <input type="number" id="questionNumber" name="questionNumber">
+    
+      <label for="questionContent">Nội dung câu hỏi:</label>
+      <textarea id="questionContent" name="questionContent"></textarea>
+    
+      <label for="answerA">Câu trả lời A:</label>
+      <input type="text" id="answerA" name="answerA">
+      <label for="answerB">Câu trả lời B:</label>
+      <input type="text" id="answerB" name="answerB">
+      <label for="answerC">Câu trả lời C:</label>
+      <input type="text" id="answerC" name="answerC">
+      <label for="answerD">Câu trả lời D:</label>
+      <input type="text" id="answerD" name="answerD">
+    
+      <label for="correctAnswer">Đáp án đúng:</label>
+      <select id="correctAnswer" name="correctAnswer">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+    
+      <input type="submit" value="Lưu">
+      <br>
+      <br>
+    </form>
   </main>
     <footer id="footerSection">
         
     </footer> 
+    <script>
+        document.getElementById("examSchedule").addEventListener("change", function() {
+          var scheduleDate = document.getElementById("scheduleDate");
+          if (this.value === "scheduled") {
+            scheduleDate.style.display = "block";
+          } else {
+            scheduleDate.style.display = "none";
+          }
+        });
+      </script>
 </body>
 </html>
