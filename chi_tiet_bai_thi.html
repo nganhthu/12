@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi tiết Bài thi trắc nghiệm</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  .question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .question h3 {
+    margin-top: 0;
+  }
+  .answers {
+    margin-top: 10px;
+  }
+  .answer {
+    margin-bottom: 5px;
+  }
+  button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+    <script src="js/loadheaderfooter.js"></script>
+</head>
+<body>
+  <header id="headerSection">
+  </header>
+    <div class="container">
+    <h2>Chi tiết Bài thi trắc nghiệm</h2>
+    <div id="examDetail">
+        <!-- Thông tin chi tiết bài thi sẽ được hiển thị ở đây -->
+    </div>
+    <button onclick="addQuestion()">Thêm câu hỏi</button>
+    </div>
+
+    <script src="js/chi_tiet_bai_thi.js"></script>
+    <footer id="footerSection">
+    </footer>
+</body>
+</html>
+
