@@ -171,6 +171,7 @@ h2 {
 
 .banner-image {
     flex: 2; 
+    margin-right: 5px;
 }
 
 .announcement-columns {
