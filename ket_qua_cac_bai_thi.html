@@ -1,0 +1,64 @@
+<!-- kết quả các bài thi.html -->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả các Bài thi</title>
+    <link rel="stylesheet" href="css/user.css">
+    <script src="js/Load_h_f_user.js"></script>
+    <script src="js/ket_qua_cac_bai_thi.js"></script>
+</head>
+<body>
+    <header id="headeruserSection">
+        <!-- Nội dung header (nếu cần) -->
+    </header>
+
+    <main>
+        <h1>Kết quả các Bài thi</h1>
+        <section class="content-section">
+            <div class="content">
+                <div class="search-bar">
+                    <input type="text" id="searchInputResult" placeholder="Tìm kiếm...">
+                    <!-- Lọc theo trạng thái -->
+                    <select id="statusFilter">
+                        <option value="all">Trạng thái</option>
+                        <option value="accessible">Có thể truy cập</option>
+                        <option value="scheduled">Đã lên lịch</option>
+                    </select>
+
+                    <!-- Lọc theo môn học -->
+                    <select id="subjectFilter">
+                        <option value="all">Môn học</option>
+                        <option value="math">Toán học</option>
+                        <option value="english">Tiếng Anh</option>
+                    </select>
+
+                    <!-- Lọc theo lớp học -->
+                    <select id="classFilter">
+                        <option value="all">Lớp học</option>
+                        <option value="classA">Lớp A</option>
+                        <option value="classB">Lớp B</option>
+                    </select>
+
+                    <!-- Lọc theo kỳ thi -->
+                    <select id="examFilter">
+                        <option value="all">Kỳ thi</option>
+                        <option value="practice">Luyện tập</option>
+                        <option value="midterm">Giữa kỳ</option>
+                        <option value="final">Cuối kỳ</option>
+                    </select>
+                    <button type="button" onclick="searchAndFilterResults()">Tìm kiếm</button>
+                </div>
+            </div>
+        </section>
+        <section class="content-section" id="resultList">
+            <!-- Nội dung kết quả sẽ được tải động bằng JavaScript -->
+        </section>
+    </main>
+
+    <footer id="footerSection">
+    </footer>
+</body>
+</html>
