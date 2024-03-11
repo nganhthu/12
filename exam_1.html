@@ -69,16 +69,16 @@
     <script>
         // Mảng giả định chứa câu hỏi và đáp án cho bài thi
         var questions = [
-            { id: 1, content: 'Câu hỏi 1: Triết học có chức năng cơ bản nào?', options: ['A. Chức năng thế giới quan', 'B. Chức năng phương pháp luận chung nhất', 'C. Cả a và b', 'D. Không có câu trả lời đúng'], correctAnswer: 'A' },
-            { id: 2, content: 'Câu hỏi 2: Ý thức có trước, vật chất có sau, ý thức quyết định vật chất, đây là quan điểm nào?', options: ['A. Duy vật', 'B. Duy tâm', 'C. Duy tâm chủ quan', 'D. Nhị Nguyên'], correctAnswer: 'B' },
-            { id: 3, content: 'Câu hỏi 3: Triết học đạo lý chủ nghĩa là một học thuyết xoay quanh yếu tố nào?', options: ['A. Tư duy', 'B. Hành động', 'C. Đạo lý', 'D. Đối tượng nghiên cứu'], correctAnswer: 'C' },
-            { id: 4, content: 'Câu hỏi 4: Học thuyết chủ nghĩa duy vật lịch sử do ai đặt ra?', options: ['A. Karl Marx', 'B. Friedrich Engels', 'C. Vladimir Lenin', 'D. Jean-Jacques Rousseau'], correctAnswer: 'A' },
-            { id: 5, content: 'Câu hỏi 5: Triết học nhân quả nói về quan hệ gì giữa nguyên nhân và kết quả?', options: ['A. Quan hệ nguyên nhân - kết quả', 'B. Quan hệ nguyên nhân - biện minh', 'C. Quan hệ tương quan', 'D. Quan hệ nguyên nhân - hiện tượng'], correctAnswer: 'A' },
-            { id: 6, content: 'Câu hỏi 6: "Tôi nghĩ, vì vậy tôi tồn tại" là câu nói của nhà triết học nào?', options: ['A. Socrates', 'B. Immanuel Kant', 'C. René Descartes', 'D. Confucius'], correctAnswer: 'C' },
-            { id: 7, content: 'Câu hỏi 7: Triết học Mác-Lênin nhấn mạnh vai trò quan trọng của tầng lớp nào trong xã hội?', options: ['A. Tầng lớp công nhân', 'B. Tầng lớp tư sản', 'C. Tầng lớp trí thức', 'D. Tầng lớp nông dân'], correctAnswer: 'A' },
-            { id: 8, content: 'Câu hỏi 8: Triết học existentialism nhấn mạnh yếu tố nào trong con người?', options: ['A. Tình yêu', 'B. Tự do', 'C. Quyền lực', 'D. Tài năng'], correctAnswer: 'B' },
-            { id: 9, content: 'Câu hỏi 9: Triết học hòa bình nghiên cứu về điều gì trong mối quan hệ xã hội?', options: ['A. Chiến tranh', 'B. Công bằng', 'C. Tự do', 'D. Hạnh phúc'], correctAnswer: 'A' },
-            { id: 10, content: 'Câu hỏi 10: Triết học Đông phương thường tập trung vào khám phá điều gì?', options: ['A. Hạnh phúc', 'B. Sự giáo dục', 'C. Sự linh thiêng', 'D. Sự công bằng'], correctAnswer: 'C' },
+            { id: 1, content: 'Câu hỏi 1: Triết học có chức năng cơ bản nào?', options: ['A. Chức năng thế giới quan', 'B. Chức năng phương pháp luận chung nhất', 'C. Cả a và b', 'D. Không có câu trả lời đúng'], correctAnswer: 'A. Chức năng thế giới quan' },
+            { id: 2, content: 'Câu hỏi 2: Ý thức có trước, vật chất có sau, ý thức quyết định vật chất, đây là quan điểm nào?', options: ['A. Duy vật', 'B. Duy tâm', 'C. Duy tâm chủ quan', 'D. Nhị Nguyên'], correctAnswer: 'B. Duy tâm' },
+            { id: 3, content: 'Câu hỏi 3: Triết học đạo lý chủ nghĩa là một học thuyết xoay quanh yếu tố nào?', options: ['A. Tư duy', 'B. Hành động', 'C. Đạo lý', 'D. Đối tượng nghiên cứu'], correctAnswer: 'C. Đạo lý' },
+            { id: 4, content: 'Câu hỏi 4: Học thuyết chủ nghĩa duy vật lịch sử do ai đặt ra?', options: ['A. Karl Marx', 'B. Friedrich Engels', 'C. Vladimir Lenin', 'D. Jean-Jacques Rousseau'], correctAnswer: 'A. Karl Marx' },
+            { id: 5, content: 'Câu hỏi 5: Triết học nhân quả nói về quan hệ gì giữa nguyên nhân và kết quả?', options: ['A. Quan hệ nguyên nhân - kết quả', 'B. Quan hệ nguyên nhân - biện minh', 'C. Quan hệ tương quan', 'D. Quan hệ nguyên nhân - hiện tượng'], correctAnswer: 'A. Quan hệ nguyên nhân - kết quả' },
+            { id: 6, content: 'Câu hỏi 6: "Tôi nghĩ, vì vậy tôi tồn tại" là câu nói của nhà triết học nào?', options: ['A. Socrates', 'B. Immanuel Kant', 'C. René Descartes', 'D. Confucius'], correctAnswer: 'C. René Descartes' },
+            { id: 7, content: 'Câu hỏi 7: Triết học Mác-Lênin nhấn mạnh vai trò quan trọng của tầng lớp nào trong xã hội?', options: ['A. Tầng lớp công nhân', 'B. Tầng lớp tư sản', 'C. Tầng lớp trí thức', 'D. Tầng lớp nông dân'], correctAnswer: 'A. Tầng lớp công nhân' },
+            { id: 8, content: 'Câu hỏi 8: Triết học existentialism nhấn mạnh yếu tố nào trong con người?', options: ['A. Tình yêu', 'B. Tự do', 'C. Quyền lực', 'D. Tài năng'], correctAnswer: 'B. Tự do' },
+            { id: 9, content: 'Câu hỏi 9: Triết học hòa bình nghiên cứu về điều gì trong mối quan hệ xã hội?', options: ['A. Chiến tranh', 'B. Công bằng', 'C. Tự do', 'D. Hạnh phúc'], correctAnswer: 'A. Chiến tranh' },
+            { id: 10, content: 'Câu hỏi 10: Triết học Đông phương thường tập trung vào khám phá điều gì?', options: ['A. Hạnh phúc', 'B. Sự giáo dục', 'C. Sự linh thiêng', 'D. Sự công bằng'], correctAnswer: 'C. Sự linh thiêng' },
         ];
 
         //lưu trạng thái đáp án của sv
