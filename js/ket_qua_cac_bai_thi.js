@@ -2,7 +2,7 @@
 
 // Mảng giả định chứa thông tin kết quả các bài thi
 var resultData = [
-    { examId: 1, title: 'Bài thi 1', subject: 'Triết học', class: 'Lớp A', date:'04/03/2024', result: 'Đạt', score: 85 },
+    { examId: 1, title: 'Bài thi 1', subject: 'Triết học', class: 'Lớp A', date:'12/03/2024', result: 'Đạt', score: 6 },
     { examId: 2, title: 'Bài thi 2', subject: 'Lập trình C++', class: 'Lớp B', date:'05/03/2024', result: 'Không đạt', score: 45 },
     { examId: 3, title: 'Bài thi 3', subject: 'Nhập môn CNPM', class: 'Lớp B', date:'01/03/2024',result: 'Đạt', score: 78 },
     { examId: 4, title: 'Bài thi 4', subject: 'Nhập môn TTNT', class: 'Lớp A', date:'06/02/2024',result: 'Không đạt', score: 32 },
@@ -16,6 +16,7 @@ var resultData = [
 function displayResultList(results) {
     var resultListSection = document.getElementById('resultList');
     resultListSection.innerHTML = ''; // Xóa nội dung cũ của danh sách
+    var score = parseInt(sessionStorage.getItem('score'));
 
     (results || resultData).forEach(function(result) {
         var resultContainer = document.createElement('div');
