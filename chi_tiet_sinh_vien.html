@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kết quả sinh viên</title>
     <link rel="stylesheet" href="css/admin.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script> <!--stackoverflow-->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="https://kit.fontawesome.com/0f2d29f0b4.js" crossorigin="anonymous"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <style>
-    
         .info-boxes {
-        padding: 10px;
-        display: grid;
-        grid-template-columns:auto auto; 
-        grid-gap: 10px;
-        justify-content: center;
+            padding: 10px;
+            display: grid;
+            grid-template-columns:auto auto; 
+            grid-gap: 10px;
+            justify-content: center;
+        }
 
         .info-box {
             font-weight: bold;
@@ -28,72 +27,148 @@
             padding: 10px 50px;
             border-radius: 7px;
             margin: 20px 30px;
-            .box-icon{
-                font-size: 40px;
-                margin-right: 40px;
-                color:#B60D0D;
-            }    
         }
+
+        .box-icon {
+            font-size: 40px;
+            margin-right: 40px;
+            color:#B60D0D;
         }
-        
+
+        .exam-list {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .exam-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .exam-list th, .exam-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .exam-list th {
+            background-color: #f2f2f2;
+        }
+
+        .exam-details {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .exam-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .exam-details th, .exam-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .exam-details th {
+            background-color: #f2f2f2;
+        }
+
+
     </style>
     <script src="js/Load_h_f_admin.js"></script>
 </head>
 <body>
     <header id="headeradminSection">
-      </header>
+    </header>
     <main>
         <div class="container" id="container">
             <h1 style="text-align: center;">Thống kê kết quả thi</h1>
             <section class="info-boxes">
-				<div class="info-box">
-					<div class="box-icon">
+                <div class="info-box">
+                    <div class="box-icon">
                         <i class="fas fa-users"></i>    
                     </div>
-					<div class="box-content">
-						<p>Tổng số lần tham gia</p>
-						<p>25</p>                        
-					</div>
-				</div>
-            
-				<div class="info-box">
-					<div class="box-icon">
-						<i class="fas fa-check-circle"></i>
-					</div>
-					
-					<div class="box-content">
-						<p>Tỉ lệ hoàn thành bài thi</p>
-                        <p>90%</p>
-					</div>
-				</div>
-				
-				<div class="info-box">
-		
-					<div class="box-icon">
-                        <i class="fas fa-star-half-alt"></i>
+                    <div class="box-content">
+                        <p>Tổng số lần tham gia</p>
+                        <p>25</p>                        
                     </div>
-					<div class="box-content">
-						<p>Điểm trung bình</p>
-                        <p id="averageScore">8.5</p>
+                </div>
+            
+                <div class="info-box">
+                    <div class="box-icon">
+                        <i class="fas fa-check-circle"></i>
                     </div>
                     
-		
-				</div>
-				
-				<div class="info-box">
-		
-					<div class="box-icon">
+                    <div class="box-content">
+                        <p>Tỉ lệ hoàn thành bài thi</p>
+                        <p>90%</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="box-icon">
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="box-content">
+                        <p>Điểm trung bình</p>
+                        <p id="averageScore">8.5</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <div class="box-icon">
                         <i class="far fa-clock"></i>
                     </div>
                     <div>
                         <p>Thời gian làm bài trung bình</p>
                         <p id="averagetime">50 phút</p>
                     </div> 
-				</div>
-			</section>
+                </div>
+            </section>
+
+            <section class="exam-list">
+                <h2>Danh sách các kỳ thi đã tham gia</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kỳ thi</th>
+                            <th>Điểm số</th>
+                            <th>Trạng thái</th>
+                            <th>Thời gian tham gia</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kỳ thi 1</td>
+                            <td>8.0</td>
+                            <td>Hoàn thành</td>
+                            <td>25/02/2024 10:00 AM</td>
+                            <td><a href="chi-tiet-ki-thi-1.html">Chi tiết</a></td>
+                        </tr>
+                        <tr>
+                            <td>Kỳ thi 2</td>
+                            <td>7.5</td>
+                            <td>Hoàn thành</td>
+                            <td>27/02/2024 11:30 AM</td>
+                            <td><a href="chi-tiet-ki-thi-1.html">Chi tiết</a></td>
+                        </tr>
+                        <tr>
+                            <td>Kỳ thi 3</td>
+                            <td>-</td>
+                            <td>Chưa hoàn thành</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            
         </div>
     </main>
     <footer id="footerSection">
-      </footer>
+    </footer>
 </body>
 </html>
+
+
