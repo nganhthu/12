@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết kỳ thi</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        .container{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .question-list {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .question-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .question-list th, .question-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .question-list th {
+            background-color: #f2f2f2;
+        }
+        .container2 {
+        text-align: center;
+        height: 100vh; /* This is optional, it's just to center the button vertically */
+        }
+
+/* Style the button */
+        .button {
+        background-color: red; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        }
+
+        /* Change the background color on hover */
+        .button:hover {
+        background-color: #45a049;
+        }
+    </style>
+    <script src="js/Load_h_f_admin.js"></script>
+</head>
+<body>
+    <header id="headeradminSection">
+        
+    </header>
+    <main>
+        <div class="container" id="container">
+            <h1 style="text-align: center;">Chi tiết bài thi</h1>
+            <section class="exam-info">
+                <h2>Thông tin bài thi</h2>
+                <p><strong>Tên bài thi:</strong> Bài thi số 1</p>
+                <p><strong>Thời gian bắt đầu:</strong> 25/02/2024 10:00 AM</p>
+                <p><strong>Thời gian kết thúc:</strong> 25/02/2024 11:30 AM</p>
+            </section>
+            <section class="student-info">
+                <h2>Thông tin sinh viên</h2>
+                <p><strong>Họ và tên:</strong> Nguyễn Văn A</p>
+                <p><strong>Mã sinh viên:</strong> B21DCCN001</p>
+                <p><strong>Lớp:</strong> CN01</p>
+            </section>
+            <section class="score">
+                <h2>Điểm số</h2>
+                <p><strong>Điểm:</strong> 8.0</p>
+            </section>
+            <section class="question-list">
+                <h2>Danh sách câu hỏi</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Câu hỏi</th>
+                            <th>Đáp án của sinh viên</th>
+                            <th>Đáp án đúng</th>
+                            <th>Giải thích của giáo viên</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Câu 1</td>
+                            <td>A</td>
+                            <td>B</td>
+                            <td><input type="text" placeholder="Nhập giải thích của giáo viên"></td>
+                        </tr>
+                        <tr>
+                            <td>Câu 2</td>
+                            <td>C</td>
+                            <td>C</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 3</td>
+                            <td>B</td>
+                            <td>B</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 4</td>
+                            <td>D</td>
+                            <td>B</td>
+                            <td><input type="text" placeholder="Nhập giải thích của giáo viên"></td>
+                        </tr>
+                        <tr>
+                            <td>Câu 5</td>
+                            <td>A</td>
+                            <td>D</td>
+                            <td><input type="text" placeholder="Nhập giải thích của giáo viên"></td>
+                        </tr>
+                        <tr>
+                            <td>Câu 6</td>
+                            <td>B</td>
+                            <td>B</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 7</td>
+                            <td>C</td>
+                            <td>C</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 8</td>
+                            <td>B</td>
+                            <td>B</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 9</td>
+                            <td>D</td>
+                            <td>D</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Câu 10</td>
+                            <td>A</td>
+                            <td>A</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+        <br>
+        <br>
+        <div class="container2">
+            <button id="save" class="button">Lưu</button>
+        </div>
+    </main>
+    <footer id="footerSection">
+    </footer>
+    <script>
+        // Xử lý sự kiện khi nhấn nút lưu
+        document.getElementById('save').addEventListener('click', function () {
+            // Thêm mã JavaScript để xử lý lưu dữ liệu khi nhấn nút lưu
+            alert('Dữ liệu đã được lưu.');
+        });
+    </script>
+</body>
+</html>
+
+
