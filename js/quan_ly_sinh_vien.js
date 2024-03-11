@@ -66,7 +66,3 @@ displayStudents(students);
 function goToAddStudent() {
     window.location.href = "them_sinh_vien.html";
 }
-
-function goToViewResult() {
-    window.location.href = "xem_ket_qua_sinh_vien.html";
-}
