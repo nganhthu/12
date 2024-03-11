@@ -114,66 +114,95 @@
             displayResult();
             displayReview();
         };
-
+    
         function goToHomePage() {
             window.location.href = 'trang_chinh_user.html';
         }
-
+    
         function goToTest() {
             window.location.href = 'bai_thi_user.html';
         }
-
+    
         function displayResult() {
-        var score = parseInt(sessionStorage.getItem('score'));
-        var totalQuestions = parseInt(sessionStorage.getItem('totalQuestions'));
-
-        document.getElementById('resultText').textContent = 'Bạn đã trả lời đúng ' + score + ' câu trên tổng số ' + totalQuestions + ' câu.';
-
-        var percentage = (score / totalQuestions) * 100;
-        document.getElementById('scoreText').textContent = 'Điểm số của bạn là: ' + percentage.toFixed(2) + '%.';
+            var score = parseInt(sessionStorage.getItem('score'));
+            var totalQuestions = parseInt(sessionStorage.getItem('totalQuestions'));
+    
+            document.getElementById('resultText').textContent = 'Bạn đã trả lời đúng ' + score + ' câu trên tổng số ' + totalQuestions + ' câu.';
+    
+            var percentage = (score / totalQuestions) * 100;
+            document.getElementById('scoreText').textContent = 'Điểm số của bạn là: ' + percentage.toFixed(2) + '%.';
         }
-
+    
         function displayReview() {
-        var reviewSection = document.getElementById('reviewSection');
-        var questions = getQuestions(); // Lấy danh sách câu hỏi từ hàm getQuestions()
+            var reviewSection = document.getElementById('reviewSection');
+            var questions = getQuestions();
+            var correctAnswers = getCorrectAnswers();
 
-        questions.forEach(function(question, questionIndex) {
-            var reviewContainer = document.createElement('div');
-            reviewContainer.classList.add('question-container');
+            questions.forEach(function (question, questionIndex) {
+                var reviewContainer = document.createElement('div');
+                reviewContainer.classList.add('question-container');
 
-            var questionContent = document.createElement('p');
-            questionContent.textContent = question.content;
+                var questionContent = document.createElement('p');
+                questionContent.textContent = question.content;
 
-            var userAnswerIndex = getUserAnswers()[questionIndex];
-            var userAnswerText = userAnswerIndex !== null ? question.options[userAnswerIndex] : 'Chưa trả lời';
+                var userAnswerIndex = getUserAnswers()[questionIndex];
+                var userAnswerText = userAnswerIndex !== null ? question.options[userAnswerIndex] : 'Chưa trả lời';
 
-            var userAnswer = document.createElement('p');
-            userAnswer.textContent = 'Câu trả lời của bạn: ' + userAnswerText;
+                var userAnswer = document.createElement('p');
+                userAnswer.textContent = 'Câu trả lời của bạn: ' + userAnswerText;
 
-            var correctAnswer = document.createElement('p');
-            correctAnswer.textContent = 'Đáp án đúng: ' + (question.options.indexOf(question.correctAnswer) + 1);
+                var correctAnswerText = correctAnswers[questionIndex];
 
-            var explanation = document.createElement('p');
-            explanation.textContent = question.explanation; 
+                var correctAnswer = document.createElement('p');
+                correctAnswer.textContent = 'Đáp án đúng: ' + correctAnswerText;
 
-            reviewContainer.appendChild(questionContent);
-            reviewContainer.appendChild(userAnswer);
-            reviewContainer.appendChild(correctAnswer);
-            reviewContainer.appendChild(explanation);
-            reviewSection.appendChild(reviewContainer);
-        });
+                var explanation = document.createElement('p');
+                explanation.textContent = question.explanation;
+
+                // Nổi bật câu trả lời đúng và sai
+                if (userAnswerIndex !== null) {
+                    if (userAnswerIndex === question.options.indexOf(correctAnswerText)) {
+                        userAnswer.style.color = 'green'; // Câu trả lời đúng, màu xanh
+                    } else {
+                        userAnswer.style.color = 'red'; // Câu trả lời sai, màu đỏ
+                    }
+                } else {
+                    correctAnswer.style.color = 'red'; // Đáp án đúng (nếu không có câu trả lời của người dùng)
+                }
+
+                reviewContainer.appendChild(questionContent);
+                reviewContainer.appendChild(userAnswer);
+                reviewContainer.appendChild(correctAnswer);
+                reviewContainer.appendChild(explanation);
+                reviewSection.appendChild(reviewContainer);
+            });
         }
 
+
+
+        // Thêm hàm để lấy danh sách đáp án đúng
+        function getCorrectAnswers() {
+            var questions = getQuestions();
+            var correctAnswers = [];
+
+            questions.forEach(function (question) {
+                correctAnswers.push(question.correctAnswer);
+            });
+
+            return correctAnswers;
+        }
+
+    
         function getQuestions() {
-        // Hàm này sẽ trả về danh sách câu hỏi từ trang trước hoặc có thể được lấy từ server
-        return JSON.parse(sessionStorage.getItem('questions'));
+            // Hàm này sẽ trả về danh sách câu hỏi từ trang trước hoặc có thể được lấy từ server
+            return JSON.parse(sessionStorage.getItem('questions'));
         }
-
+    
         function getUserAnswers() {
-        // Hàm này sẽ trả về mảng đáp án của người dùng từ trang trước
-        return JSON.parse(sessionStorage.getItem('userAnswers'));
+            // Hàm này sẽ trả về mảng đáp án của người dùng từ trang trước
+            return JSON.parse(sessionStorage.getItem('userAnswers'));
         }
-
     </script>
+    
 </body>
 </html>
