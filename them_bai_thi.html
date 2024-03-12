@@ -103,14 +103,13 @@
                 <input type="file" id="excelFile" accept=".xls,.xlsx">
               </div>
         
+              <button type="submit" >Thêm câu hỏi</button>
               <button type="submit" onclick="redirectQuanLy()">Tạo bài thi</button>
             </form>
           </div>
     </main>
     <script>
-      function redirectQuanLy() {
-        window.location.href = 'quan_ly_ky_thi.html';
-      }
+      
         document.getElementById("examSchedule").addEventListener("change", function() {
       var scheduleDate = document.getElementById("scheduleDate");
       if (this.value === "scheduled") {
@@ -137,16 +136,6 @@
         questionFields.style.display = "none";
         fileInput.style.display = "block";
       }
-    });
-    document.getElementById("createExamForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        var formData = new FormData(this);
-        console.log("Dữ liệu form:", Object.fromEntries(formData));
-
-        // Your existing code for handling form submission...
-
-        // After processing the form data, redirect back to the previous page
-        window.history.back(); // This line will redirect back to the previous page
     });
 
     document.getElementById("createExamForm").addEventListener("submit", function(event) {
@@ -196,6 +185,9 @@
         }
       }
     });
+    function redirectQuanLy() {
+        window.location.href = 'quan_ly_ky_thi.html';
+      }
     </script>
     
 </body>
